@@ -1,0 +1,31 @@
+[
+  {
+    "key": "fields",
+    "type": "json",
+    "rows": 6,
+    "help": "Trusted editable fields, e.g. {\"comment\":{\"type\":\"text\",\"required\":false}}. Types: text, number, boolean. Incoming requests can only reduce this list."
+  },
+  {
+    "key": "timeout_sec",
+    "type": "integer",
+    "min": 10,
+    "max": 86400,
+    "help": "Decision deadline from receipt in seconds. Expired or replaced requests can never be approved."
+  },
+  {
+    "key": "max_requests",
+    "type": "integer",
+    "min": 1,
+    "max": 10000,
+    "advanced": true,
+    "help": "Maximum distinct requests remembered during one Run. No silent eviction of replay protection."
+  },
+  {
+    "key": "max_bytes",
+    "type": "integer",
+    "min": 1024,
+    "max": 65536,
+    "advanced": true,
+    "help": "Maximum JSON bytes per request or corrected content; no attached file bytes."
+  }
+]
